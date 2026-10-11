@@ -97,7 +97,7 @@ window.WEDDING = {
   closing: "Your presence will make our nights in Dubai truly golden.",
   families: "With love — The Malhotra & Oberoi Families",
   hashtag: "",                         /* "" = auto #AdityaWedsAisha */
-  music: "music/song.mp3",
+  music: "music/song 3.mp3",
 
   /* ---- colours (hex) ---- */
   theme: { ink: "#1d1b3d", blue: "#3a3a7a", sky: "#e6dcc8", mist: "#faf6ee", gold: "#c9a24e" },
