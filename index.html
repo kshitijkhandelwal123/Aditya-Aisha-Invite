@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wedding Invitation</title>
+<meta name="theme-color" content="#141434">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="details.js"></script>
+</head>
+<body class="locked">
+
+<!-- ================= THE GATE (Taj marble darwaza) ================= -->
+<div id="gate" aria-label="Tap to open the doors">
+  <div class="g-back"></div>
+  <div class="g-stage" id="gStage">
+    <div class="g-scene g-sky"><i class="g-moonglow"></i></div>
+    <img class="g-city" id="gCity" src="images/burj-tall.jpg" alt="">
+    <i class="g-glow"></i><i class="g-sweep"></i>
+    <i class="g-beam b1"></i><i class="g-beam b2"></i><i class="g-beam b3"></i>
+    <div class="g-head">
+      <p id="gEyebrow"></p>
+      <div class="g-names"><span id="gGroom"></span><em>&amp;</em><span id="gBride"></span></div>
+    </div>
+    <div class="g-count" id="gCount"><i class="g-ring"></i><b id="gNum">3</b></div>
+    <div class="g-wow" id="gWow"></div>
+    <button class="lock" id="lock" aria-label="Tap to begin"><svg viewBox="0 0 156 174" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe9b4"/><stop offset=".5" stop-color="#c9a24e"/><stop offset="1" stop-color="#f2d894"/></linearGradient><radialGradient id="ld" cx="40%" cy="32%"><stop offset="0" stop-color="#fffaf0" stop-opacity=".95"/><stop offset=".6" stop-color="#f6e2b4" stop-opacity=".9"/><stop offset="1" stop-color="#d9b36a" stop-opacity=".9"/></radialGradient></defs>
+<path d="M78.0 15.0 L100.2 33.4 L128.9 36.1 L131.6 64.8 L150.0 87.0 L131.6 109.2 L128.9 137.9 L100.2 140.6 L78.0 159.0 L55.8 140.6 L27.1 137.9 L24.4 109.2 L6.0 87.0 L24.4 64.8 L27.1 36.1 L55.8 33.4Z" fill="url(#lg)"/><path d="M102.5 27.9 L114.8 50.2 L137.1 62.5 L130.0 87.0 L137.1 111.5 L114.8 123.8 L102.5 146.1 L78.0 139.0 L53.5 146.1 L41.2 123.8 L18.9 111.5 L26.0 87.0 L18.9 62.5 L41.2 50.2 L53.5 27.9 L78.0 35.0Z" fill="#fff3d6" fill-opacity=".35" stroke="url(#lg)" stroke-width="1.4"/>
+<circle cx="78" cy="87" r="44" fill="url(#ld)" stroke="url(#lg)" stroke-width="2.4"/><circle cx="78" cy="87" r="38" fill="none" stroke="#b8892f" stroke-width=".8" stroke-dasharray="2 3"/>
+<text id="mono" x="78" y="95" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-weight="600" font-size="24" fill="#5a3e14"></text>
+<text x="78" y="166" text-anchor="middle" font-family="Jost,sans-serif" font-weight="500" font-size="9" letter-spacing="3" fill="#f6dc9c">TAP TO BEGIN</text></svg></button>
+    <div class="g-tap" id="gTap"></div>
+  </div>
+</div>
+<canvas id="fx"></canvas>
+<div id="petals"></div>
+<button id="musicBtn" aria-label="Toggle music">♪</button>
+
+<main>
+<i class="side l"></i><i class="side r"></i>
+<!-- ================= HERO ================= -->
+<section id="hero">
+  <div class="scene">
+    <i class="sun"></i><i class="cloud c1"></i><i class="cloud c2"></i><i class="cloud c3"></i>
+    <svg class="bird b1" viewBox="0 0 40 16"><path d="M2 12C10 2 16 2 20 10 24 2 30 2 38 12" fill="none" stroke="#7caf83" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <svg class="bird b2" viewBox="0 0 40 16"><path d="M2 12C10 2 16 2 20 10 24 2 30 2 38 12" fill="none" stroke="#7caf83" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <svg class="bird b3" viewBox="0 0 40 16"><path d="M2 12C10 2 16 2 20 10 24 2 30 2 38 12" fill="none" stroke="#7caf83" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <img class="pal photo" id="heroImg" src="images/atlantis-front.jpg" alt=""><img class="h-arch" src="images/arch-line.svg" alt=""><i class="hshade"></i>
+  </div>
+  <div class="hero-txt">
+    <p class="eyebrow hero-in" id="hEyebrow"></p>
+    <h1 class="hero-in"><span class="n1" id="groom"></span><span class="amp">&amp;</span><span class="n2" id="bride"></span></h1>
+    <div class="orn hero-in"><i></i><b>✦</b><i></i></div>
+    <p class="hdate hero-in" id="hDate"></p>
+    <p class="hplace hero-in" id="hPlace"></p>
+  </div>
+  <div class="scroll hero-in"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- ================= INVITATION CARD ================= -->
+<section id="letter" class="band">
+  <div class="card reveal-up">
+    <svg class="c-crown" viewBox="0 0 120 60" aria-hidden="true"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dea4"/><stop offset=".5" stop-color="#c4a468"/><stop offset="1" stop-color="#e8cf8e"/></linearGradient></defs>
+      <g fill="none" stroke="url(#cg)" stroke-width="1.4" stroke-linecap="round"><path d="M4 52C26 52 36 40 46 30M116 52C94 52 84 40 74 30"/><path d="M18 46c6-6 14-4 16 2M102 46c-6-6-14-4-16 2"/></g>
+      <path d="M60 4c9 10 15 18 15 28a15 15 0 0 1-30 0c0-10 6-18 15-28z" fill="#fbf7ec" stroke="url(#cg)" stroke-width="1.4"/><path d="M60 16c5 6 8 11 8 17a8 8 0 0 1-16 0c0-6 3-11 8-17z" fill="#97c99e"/><circle cx="60" cy="52" r="3" fill="url(#cg)"/></svg>
+    <i class="cn bl"></i><i class="cn br"></i>
+    <img class="c-fl l" src="images/lanterns.svg" alt=""><img class="c-fl r" src="images/lanterns.svg" alt="">
+    <img class="c-ganesh" src="images/ganesh.png" alt="">
+    <div class="blessing" id="blessing"></div>
+    <p class="tag" id="tag"></p>
+    <div class="orn"><i></i><b>✦</b><i></i></div>
+    <p class="small" id="invite"></p>
+    <div class="photo" id="coupleWrap" hidden><img id="couplePhoto" alt="The couple"></div>
+    <div class="cpl">
+      <div class="who"><div class="nm" id="cGroom"></div><span class="lab" id="gLab">Son of</span><b id="gp"></b></div>
+      <div class="amp2"><i></i><em>&amp;</em><i></i></div>
+      <div class="who"><div class="nm" id="cBride"></div><span class="lab" id="bLab">Daughter of</span><b id="bp"></b></div>
+    </div>
+    <p class="c-end" id="cEnd"></p>
+  </div>
+</section>
+
+<!-- ================= POSTCARD ================= -->
+<section id="postcard">
+  <div class="eyebrow" id="pcEyebrow"></div>
+  <h2 id="pcTitle"></h2>
+  <div class="pcs" id="pcs"></div>
+  <p class="pcnote" id="pcNote"></p>
+</section>
+
+<!-- ================= SAVE THE DATE ================= -->
+<section id="date" class="mist">
+  <div class="eyebrow">Save the date</div>
+  <h2>For the Wedding Celebration</h2>
+  <img class="bow" src="images/star-orn.svg" alt="">
+  <div class="tiles" id="sdate">
+    <div class="tile" data-k="day"><div class="v"><b id="dDay"></b><small>Day</small></div><canvas class="foil"></canvas></div>
+    <div class="tile" data-k="month"><div class="v"><b id="dMon"></b><small>Month</small></div><canvas class="foil"></canvas></div>
+    <div class="tile" data-k="year"><div class="v"><b id="dYr"></b><small>Year</small></div><canvas class="foil"></canvas></div>
+  </div>
+  <p class="sdhint" id="sdHint"></p>
+  <div class="dfull" id="dFull"><small id="dWeek"></small><em id="dTime"></em></div>
+
+  <h2 class="cdh">The wedding begins in</h2>
+  <div class="cd">
+    <div class="ring"><svg viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="34"/><circle class="fg" id="rD" cx="40" cy="40" r="34"/></svg><b id="cdD">00</b><small>Days</small></div>
+    <div class="ring"><svg viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="34"/><circle class="fg" id="rH" cx="40" cy="40" r="34"/></svg><b id="cdH">00</b><small>Hours</small></div>
+    <div class="ring"><svg viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="34"/><circle class="fg" id="rM" cx="40" cy="40" r="34"/></svg><b id="cdM">00</b><small>Minutes</small></div>
+    <div class="ring"><svg viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="34"/><circle class="fg" id="rS" cx="40" cy="40" r="34"/></svg><b id="cdS">00</b><small>Seconds</small></div>
+  </div>
+
+  <div class="mu reveal-up">
+    <div class="mu-dia"><i class="d1"></i><i class="d2"></i><i class="d3"></i><b class="sp s1"></b><b class="sp s2"></b><b class="sp s3"></b><b class="sp s4"></b></div>
+    <div class="mu-in">
+      <div class="mu-t" id="muT"></div>
+      <div class="mu-lab" id="muLab"></div>
+      <div class="mu-time" id="muTime"></div>
+      <p id="muX"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events">
+  <div class="eyebrow" id="evEyebrow"></div>
+  <h2>Schedule of Events</h2>
+  <div class="orn"><i></i><b>✦</b><i></i></div>
+  <div class="evs" id="tl"></div>
+</section>
+
+<!-- ================= VENUE ================= -->
+<section id="venue" class="mist">
+  <div class="eyebrow">The venue</div>
+  <h2>We're celebrating at</h2>
+  <div class="varch reveal-up" id="vimgWrap"><div class="in"><img id="vimg" alt="Venue"></div></div>
+  <div class="vname" id="vName"></div>
+  <p class="vaddr" id="vAddr"></p>
+  <p class="vnote" id="vNote"></p>
+  <a class="btn" id="mapBtn" target="_blank" rel="noopener">◉ Find your way ↗</a>
+  <p class="vcity" id="vCity"></p>
+</section>
+
+<section id="gallery" class="mist">
+  <div class="eyebrow">Moments</div>
+  <h2>Our Gallery</h2>
+  <div class="orn"><i></i><b>✦</b><i></i></div>
+  <div class="gwrap">
+    <div class="gslides" id="gal"></div>
+    <div class="gctl"><button id="gPrev" aria-label="Previous">‹</button><div class="gdots" id="gDots"></div><button id="gNext" aria-label="Next">›</button></div>
+  </div>
+</section>
+
+<!-- ================= WARDROBE ================= -->
+<section id="dress">
+  <div class="eyebrow" id="dEyebrow"></div>
+  <h2 id="dTitle"></h2>
+  <div class="orn"><i></i><b>✦</b><i></i></div>
+  <div class="looks" id="dressList"></div>
+  <div class="lbox" id="lbox" hidden><button aria-label="Close">×</button><img id="lboxImg" alt=""></div>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section id="rsvp" class="mist">
+  <div class="rcard reveal-up">
+    <h2>RSVP</h2>
+    <div class="orn"><i></i><b>✦</b><i></i></div>
+    <form id="form" autocomplete="off">
+      <label class="l" for="gName">Your name</label>
+      <input type="text" id="gName" placeholder="Full name">
+      <div class="seg">
+        <label><input type="radio" name="att" value="yes" checked><span>Yes, I'll be there</span></label>
+        <label><input type="radio" name="att" value="no"><span>Sorry, can't make it</span></label>
+      </div>
+      <label class="l" for="msg">A message for the couple (optional)</label>
+      <textarea id="msg" rows="3" placeholder="Your blessings & wishes…"></textarea>
+      <a class="btn" id="send" target="_blank" rel="noopener" href="#rsvp">Send reply on WhatsApp</a>
+      <p class="rsvpnote">Kindly reply by <span id="rsvpBy"></span></p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= CLOSING ================= -->
+<footer id="closing">
+  <div class="cl-in">
+    <div class="cl-mono"><span id="mono2"></span></div>
+    <p class="cl-small">With hearts full of joy</p>
+    <div class="cl-names" id="clNames"></div>
+    <div class="cl-date" id="clDate"></div>
+    <div class="orn"><i></i><b>✦</b><i></i></div>
+    <p class="big" id="closeTxt"></p>
+    <p class="fam" id="fam"></p>
+    <div class="cl-tag" id="clTag"></div>
+    <div class="credit">Digital invitation by The Wedding Scrippt</div>
+  </div>
+  <div class="cl-pal"><img id="footImg" src="images/atlantis-sunset.jpg" alt="" loading="lazy"></div>
+</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

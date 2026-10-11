@@ -1,0 +1,22 @@
+DUBAI NIGHTS · LUXURY INVITATION — HOW TO EDIT
+==============================================
+Edit ONLY details.js. Keep the "quotes" and the commas.
+
+Opening ....... gateEyebrow, gateText, countFrom (3 = 3-2-1 countdown), gateReveal (glowing line after the Burj lights up)
+Couple ........ groom, bride, monogram (on the gold star crest), parents & labels
+Top & card .... heroEyebrow, place, blessing, tagline, inviteLine, cardFooter (null = automatic)
+Pictures ...... gateImage (Burj on opening screen), heroImage, venueImage, footerImage, couplePhoto — the drawings (dubai-dusk.svg, palm-aerial.svg,
+                desert.svg) can be swapped for real photos: put them in images/ and write e.g. "images/resort.jpg"
+Postcards ..... postcardEyebrow, postcardTitle, postcardNote, postcards (3 pictures with captions)
+Gallery ....... list of { src, cap }
+Date .......... weddingDateTime (use +04:00 for Dubai time), dateDay / dateMonth / dateYear (3 arch scratch cards),
+                sealText, dateNote, rememberReveal: false (scratch cards every visit)
+Events ........ add / remove lines (image + focus)
+Muhurat ....... muhurat: { title, label, time, text }
+Venue ......... venueName, venueAddress, venueNote, venueCity, mapQuery
+Wardrobe ...... dressCode: colors (chips), look (| = new line), poster (optional full dress-code image)
+RSVP .......... whatsapp (country code + number, no +), rsvpBy
+Closing ....... closing, families, hashtag
+Music ......... music: "music/song.mp3"
+Colours ....... theme: ink, blue, sky, mist, gold
+Hide .......... hideSections: e.g. ["gallery"]
